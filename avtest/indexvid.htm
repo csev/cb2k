@@ -1,0 +1,270 @@
+<head>
+<title>Testing Video Compression</title>
+</head>
+<body bgcolor=white>
+<h1>What Video Compression to Use?</h1>
+This page attempts to help determine what compression should be used for both the archival media and for the web streaming media.
+To produce this material a short piece was digitized using no compression and then recompressed (off-line) into each of the formats.
+<p>
+For the archival quality, the key is to use the lowest disk space which keeps quality very high.  For web delivery, you can sacrifice
+quality somewhat to save on the bandwidth.
+<p>
+In my (ad hoc) testing, while video is nice to have and helps form and maintain a bond, audio quality is very important.  Bad audio can
+cause a student to become fatigued.  So, a good rule of thumb is to allocate at least 50-60% of the anticiapted bandwidth to audio.
+<p>
+In this table, the clips are sorted from low bandwidth to high bandwidth.  Below 10KB/sec,
+we can look for the different formats for streaming over modems.  The standard pick lists for Sorensen at 20Kbps and 40Kbps are the winners in the modem choice.  The H263 at 3KB/sec is a reasonable competitor ot the Sorenson 3KB/sec - you seem to get a less grainy image with less detail in the H263.  The Sorensen 
+gets finer detail but more grain - ah well - those are the tradeoffs.
+<p>
+Above 10KB/sec, we are looking for an archival format with sufficient quality for our storage invested.  The winners in my opinion are the PJPEG at 8 frames per second.  If you can afford the high quality at 60KB/sec, go for it.  The "best value" choice is PJPEG medium quality at 30KB/sec.
+<p>
+Remember that to convert from Kb/sec (modem speeds) to KB/sec (storage amounts) you must divide by 8.  Since each byte (B) contains 8 bits (b).
+<p>
+If in your testing, you have any comments on this page, please send them to me at csev@umich.edu.
+<p>
+Just for your reference, I have digitized the uncompressed media into RealMedia using the 
+G2 encoder at several bit rates:
+<ul>
+<li><a href=r-28.rm>Encoded at 20Kbps</a> 
+- (2.5 good motion and frame rate. some motion artifacts)
+<li><a href=r-56.rm>Encoded at 40Kbps</a>
+- (2.5 good motion and frame rate. some motion artifacts)
+<li><a href=r-128.rm>Encoded at 80Kbps</a>
+- (3.5 very few artifacts)
+</ul>
+It is interesting to compare the Real Media with the Quicktime at similar bit rates.
+<p>
+The best way to use this table is to let all of the clips download into cache and then go up and down pressing the
+play/pause buttons.  On a modem this might take a long time, all the clips total about 7.5MB.
+<CENTER>
+<TABLE BORDER=2>
+<TR>
+<TD>
+Compression
+<TD>
+Press to Test
+<TD>
+Frames per <br> Second
+<TD>
+KB/sec
+<TD>
+Quality <br>1=bad 5=good
+</TR>
+<TR>
+<TD>
+Sorensen <br>
+Export Pick List <BR>
+20Kbps, Voice, Low Motion
+<TD>
+<embed src=v-2kvoice.mov autostart=false HEIGHT=160 width=176></embed>
+<TD>
+3
+<TD>
+1.8
+<TD>
+1.5
+Reasonable detail - frame rate too low
+</TR>
+<TR>
+<TD>
+H263 <br>
+Limit data to 2KB/sec <br>
+Size 128x96
+<TD>
+<embed src=v-2kh263.mov autostart=false HEIGHT=160 width=176></embed>
+<TD>
+3
+<TD>
+2.4
+<TD>
+1 - Way to foggy - not enough detail
+</TR>
+<TR>
+<TD>
+H263 <br>
+Limit data to 3KB/sec
+<TD>
+<embed src=v-3kh263.mov autostart=false HEIGHT=160 width=176></embed>
+<TD>
+10
+<TD>
+3.4
+<TD>
+2.5 - Smoother than the Sorensen but less detail
+</TR>
+<TR>
+<TD>
+Sorensen <br>
+Export Pick List <BR>
+40Kbps, Voice, Low Motion <BR>
+<TD>
+<embed src=v-4kvoice.mov autostart=false HEIGHT=160 width=176></embed>
+<TD>
+6
+<TD>
+3.7
+<TD>
+2.5 - More Detail than H263 but more grain as well
+</TR>
+<TR>
+<TD>
+PJPEG - Medium <br>
+3 Fps <br>
+Size 128x96 <br>
+Note - Cannot limit <br>
+data rate
+<TD>
+<embed src=v-2kpjpeg.mov autostart=false HEIGHT=160 width=176></embed>
+<TD>
+3
+<TD>
+8.5
+<TD>
+3 - but the data rate is too high for web delivery
+</TR>
+<TR>
+<TD>
+Sorensen <br>
+Export Pick List <BR>
+100Kbps, Voice, Low Motion <BR>
+<TD>
+<embed src=v-10kvoice.mov autostart=false HEIGHT=160 width=176></embed>
+<TD>
+10
+<TD>
+10
+<TD>
+3 - Not bad - for LAN quality
+</TR>
+<TR>
+<TD>
+Sorensen - Medium Quality <br>
+Limit rate to 20KBs <br>
+8 Fps
+<TD>
+<embed src=v-mpeg20k8fpsmed.mov autostart=false HEIGHT=160 width=176></embed>
+<TD>
+8
+<TD>
+20
+<TD>
+2.5 - Blockiness Sorensen artifacts show up.  Would be very bad as archival media.
+</TR>
+<TR>
+<TD>
+Sorensen - Medium Quality <br>
+Limit rate to 20KBs <br>
+30 Fps
+<TD>
+<embed src=v-mpeg20k30fpsmed.mov autostart=false HEIGHT=160 width=176></embed>
+<TD>
+30
+<TD>
+20
+<TD>
+0 - Very Blocky - Look at about 3 seconds in.
+</TR>
+<TR>
+<TD>
+PJPEG - Medium Quality <br>
+8 fps <br>
+Note - Cannot limit <br>
+data rate
+<TD>
+<embed src=v-pjpeg8fpsmed.mov autostart=false HEIGHT=160 width=176></embed>
+<TD>
+8
+<TD>
+33
+<TD>
+4 - Loss of some color detail
+</TR>
+<TR>
+<TD>
+PJPEG - High Quality <br>
+8 fps <br>
+Note - Cannot limit <br>
+data rate
+<TD>
+<embed src=v-pjpeg8fpshigh.mov autostart=false HEIGHT=160 width=176></embed>
+<TD>
+8
+<TD>
+60
+<TD>
+4.5 - Color and detail are pretty good
+</TR>
+<TR>
+<TD>
+MJPEG A - Medium Quality
+<TD>
+<embed src=v-mjpeg10fpsmed.mov autostart=false HEIGHT=160 width=176></embed>
+<TD>
+10
+<TD>
+60
+<TD>
+4 - You have to look carefully but there are motion related artifacts.  
+The PJPEG is more consistent.
+</TR>
+<TR>
+<TD>
+Sorensen - Medium Quality <br>
+30 fps
+<TD>
+<embed src=v-mpeg30fpsmed.mov autostart=false HEIGHT=160 width=176></embed>
+<TD>
+30
+<TD>
+82
+<TD>
+3 - This is very blocky.  At such a high data rate it should be better.
+Perhaps I have done something wrong like encoded at 160x120 which drive Sorensen
+nuts ??
+</TR>
+<TR>
+<TD>
+Sorensen - Best Quality <BR>
+30 fps
+<TD>
+<embed src=v-mpeg30fpsbest.mov autostart=false HEIGHT=160 width=176></embed>
+<TD>
+30
+<TD>
+149
+<TD>
+4 - Again, the video seems to pulse as I move around.
+</TR>
+<TR>
+<TD>
+MJPEG A - Best Quality <br>
+10 fps
+<TD>
+<embed src=v-mjpeg10fpsbest.mov autostart=false HEIGHT=160 width=176></embed>
+<TD>
+10
+<TD>
+283
+<TD>
+4.5 - Pretty good
+</TR>
+<TR>
+<TD>
+Uncompresssed
+<TD>
+<embed src=v-uncompressed.mov autostart=false HEIGHT=160 width=176></embed>
+<TD>
+30
+<TD>
+1000
+<TD>
+5 
+</TR>
+</TABLE>
+</CENTER>
+<p>
+<address>
+Charles Severance 10/99
+</address>
+
+

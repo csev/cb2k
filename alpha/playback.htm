@@ -1,0 +1,29 @@
+<h2>Playback Issues</h2>
+The area which needs the most testing is the area of playback issues. 
+Because people will be playing this back on a multitude of different
+systems, problems will come up which will be important to get solved.
+<p>
+I expect that we will see problems in several areas (given my experience with 
+real).
+<ul>
+<li>We will crash the QuickTime Player because it is not used to 
+dealing with all these tracks
+<li>When the player runs as a plug-in, it may crash the browser, again because
+the Quicktime is so complex.
+<li>We will have videos which don't play because of a missing CODEC.
+<li>We will have videos which play on a Mac but not on a PC because of
+a missing CODEC.  (We could choose a more conservative codec sich as Indeo
+but it will not have as good a quality as MPEG at the same bit rate).
+<li>We will have quality of playback issues on differing hardware combinations
+</ul>
+The only way to find these out is to test test test.  No matter how much 
+time I spend testing, once students get ahold of it, new problems will surface.
+<h2>Known Problems</h2>
+<ul>
+<li>On my Sony-C1 Vaio 266Mhz P1, the playback audio stuttered - the solution
+was found (Thanks Kurt) by going to 
+<b> Start | Settings | Control Panel | QuickTime | Direct Sound | Options </b>
+and setting the FIFO size from 60 to 480 Ms.  But my VAIO generally has weak 
+performance for anything compute intensive.  I have seen the problem to a lesser
+extent on my home PII-300 and PII-450 systems.
+</ul>

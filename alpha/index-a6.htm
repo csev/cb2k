@@ -1,0 +1,32 @@
+<title>Alpha Test</title>
+<h1>Alpha Version 6</h1>
+Sun Oct 31 20:26:10 EST 1999
+<p>
+Well, it is Halloween and I have just finished handing out candy 
+to the kiddies so it is time to upload alpha 6.
+<p>
+Alpha 5 was created just before the trip to Educause in Long Beach.  After 
+the Educause demo, Kurt Ackman of Apple said that 
+he was about to tell a bunch of folks about CB2K so I 
+figured that I should fix a few nagging bugs.  I also want to start using 
+it to do a few longer talks myself that I plan to keep.  Here is some
+of the bugs fixed:
+<ul>
+<li>Fixed the slow loss of synchronization - turns out I was using ticks
+rather than microseconds.  Ticks are not "real-time" only microseconds.
+This still is a little problem
+in long lectures with lots of drawing - but I think that is rounding.
+<li>Fixed a problem of drawing where the pen seemed to stay down at the 
+wrong time (only in the quicktime lecture).  
+<li>
+Increased the table sizes for the draw,pointer, and text and images. 
+Added some error checking on the image table size during recording and 
+some sanity checks during the reaload of the infor from the .txt files.
+Fixed a crash during the lecture generation that turned out to be a negative
+duration.
+<li>Fixed a problem where the end of the lecture got messed up and 
+the last thing the user saw was a blank screen.
+</ul>
+TTFN
+<p>
+/Chuck

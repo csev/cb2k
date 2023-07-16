@@ -1,0 +1,169 @@
+Testing log 05/06/00 - From Switzerland (CERN)
+
+You can jump to the very end for the test results table and conclusion.
+
+Degrees of freedom
+
+MacOS 8.6 and MacOS 9.0
+IREZ ZV Drivers version 2F5 and 2F6
+Kritter PCMCIA and Kritter/SV
+Quicktime 4.1.2 and Quicktime 4.0.3
+
+General problem is that the Kritter products seem to have become quite
+unreliable  on MacOS9
+
+Working with two computers (333Mhz non-firewire and 500Mhz firewire) 
+Initially both computers were running MacOS9 with the latest Quicktime
+and both computers exhibited lots of problems with both the old and new
+Kritter drivers.  The bugs on the 333Mhz running OS9 were the same as
+the bugs on the 500Mhz machine with OS9 as documented below.
+
+The problem that really got me cheezed was the fact that when you
+capture at 160x120, the material is actually captured at 640x240 (yes
+that is right), but the "Current Size" in quicktime "Size" is 160x120. 
+Quicktime player shows the strange video normally but ClipBoard cannot
+find  anything except the actual size of 640x240.  In info for
+Quicktime, the Format is 640x240, the Normal Size is 640x240 and the
+Current Size is 160x120.  Quicktime player shows it in 160x120.  FIle
+sizes indicate that there is really 640x240 of data in the file.  All of
+the Quicktime Calls I can make inside Clipboard report the 640x240 size
+
+see http://www-personal.umich.edu/~csev/projects/cb2k/bugs/videosize.txt
+for example code.
+
+We start by reformatting the 333Mhz system as 8.6 - Interestingly, this
+works swell if we tell it to blast the system folder completely.
+
+Install the IREZ Old drivers from the Orange/Silver CD (W98/Macintosh)
+
+Kriter/SV works with the QT3 drivers from the 8.6 CD and ReelEyes
+captures 160x120 natively as 160x120.
+
+Upgrade to the latest QT from the net (4.1.2 I think) - Again ReelEyes
+captures 160x120 as native 160x120.
+
+Testing the Kritter/PCMCIA - in captured media size is fine but the last
+second of the audio is a horrible screeching noise.  Try the Kritter/SV
+- horrible screeching noise.  Try to capture with Clipboard - same
+screeching noise.
+
+[Note added 5/15/00 - The screeching is a Quicktime Problem and 
+is accepted by Apple and will hopefully be fixed soon.]
+
+Check for on-line updates - none.
+
+When the file is flattenned by ReelEyes, the screeching is still
+present.
+
+Install Kritter/USB drivers from the CD.
+
+Use Kritter/USB with ReelEyes - Everything works fine except for the
+screeching noise is there as well.
+
+Uninstall Quicktime and reinstall it from the net.
+
+Capturing still has screeching noise.
+
+Uninstall QT 4.1.2 - reinstall QT 4.0.3.
+
+Reeleyes capture with Kritter/SV works swell and there is no screeching
+sound.
+
+Note (500Mhz mac has never exhibited the screeching sound in any tests)
+
+On 500Mhz Mac running OS9, uninstall QT 4.1.2 - reinstall QT 4.0.3 full
+install Capture with ReelEyes/Kritter/SV - size is wrong, audio and
+video are fine (no screeching)
+
+On the 333/8.6 mac, using the new drivers (F6) and QT 4.0.3 when the
+Kritter/PCMCIA is inserted and a capture is done, things are fine -
+Video is OK, Audio has no screeching, and the size is correct.  However
+if you re-run RealEyes again you see black.  If you eject the ZV Drivers
+and reinsert the card, it works again with the first ReelEyes Capture
+but not the second.  (This was previously reported to IREZ).
+
+Kritter/SV does not exhibit this behavior - it does multiple captures
+without the need to be reinserted with the F6 drivers.
+
+Testing the 500Mhz system, OS9, New drivers, QT4.0.3 Krittter/PCMCIA
+cannot record at all - light comes on but we see black screens in
+ReelEyes.
+
+We switch both systems to the Old ZV drivers (F5 - One file - no ZV
+Enabler) and reboot both systems.
+
+On the 500 MHz OS9 QT 4.0.3 old ZV drivers, the Kritter/PCMCIA still
+shows black.  The Kritter/SV performs flawlessly.
+
+On the 333Mhz OS 8 QT 4.0.3 old ZV drivers, Kritter/PCMCIA performs
+flawlessly - no screeching audio, video OK, works for multiple captures
+without the need for restart.  Capture works flawlessly with both
+ReelEyes and Clipboard (There is never a situation where ClipBoard and
+ReelEyes have different results).
+
+Similarly the Kritter/SV works flawlessly. on the 333Mhz system.
+
+Now for more structured testing....
+
+For each configuration, the following tests were run.  Capture video
+with ReelEyes.  Playback the video, listening to audio.  Open in QT
+Player, check Format to see if the size was correct (not 640x240). 
+Close ReelEyes, reopen ReelEyes and see if a capture would work.
+
+Four problems were encountered in various combinations.
+
+Black Screen immediately when ReelEyes is started - press record - 
+  video appears - press mouse to end record and "A -2048" error 
+  occurred in NMFFI" and no file is saved
+Capture has 1 second or screeching in the audio at the end of the capture.
+Capture has mismatch between the Current size and the Format.
+Capture does not work a second time without ejecting the PCMCIA Card
+
+The entire suite of tests was run twice.  The test order was varied
+between the first and second pass.  Other than black screen, when one
+test is failed, you can assume that the other tests were performed and
+passed.  So, for example, MacOS86/QT4.1.2/OLD ZV Drivers failed the
+audio test but PASSED the black screen, size , and second capture tests.
+
+This DOES not seem to depend on the capture software used.  For these
+tests, I used ReelEyes in all configurations, but for many of them I
+have used ClipBoard and Hack TV and so far I have never seen different
+results because of the capture software used.  I assume that is because
+they are all based on HackTV ultimately and are making the right
+Quicktime calls.
+
+[Note added 05/15/00 - In disucssion with the author of ReelEyes, I 
+found out that ReelEyes is NOT based on HackTV.  This interesting 
+because  HackTV and CliBoard use the Sequence Grabber but apparently
+ReelEyes does not.  But all three exhibited the same problems.  Might
+lead one ot think it is NOT the Sequence Grabber (part of Quicktime)]
+
+Configurations for the Kritter/PCMCIA:
+MacOS9/QT 4.1.2/Old ZV Drivers - Black Screen
+MacOS9/QT 4.1.2/New ZV Drivers - Black Screen
+MacOS9/QT 4.0.3/Old ZV Drivers - Black Screen
+MacOS9/QT 4.0.3/New ZV Drivers - Black Screen
+
+MacOS8.6/QT 4.1.2/Old ZV Drivers - Screeching
+MacOS8.6/QT 4.1.2/New ZV Drivers - Screeching Second capture fails
+MacOS8.6/QT 4.0.3/Old ZV Drivers - Perfect
+MacOS8.6/QT 4.0.3/New ZV Drivers - Second capture fails
+
+Configurations for the Kritter/SV:
+MacOS9/QT 4.1.2/Old ZV Drivers - Size is wrong
+MacOS9/QT 4.1.2/New ZV Drivers - Size is wrong
+MacOS9/QT 4.0.3/Old ZV Drivers - Size is wrong
+MacOS9/QT 4.0.3/New ZV Drivers - Size is wrong
+
+MacOS8.6/QT 4.1.2/Old ZV Drivers - Audio Screeching
+MacOS8.6/QT 4.1.2/New ZV Drivers - Audio Screeching
+MacOS8.6/QT 4.0.3/Old ZV Drivers  - Perfect
+MacOS8.6/QT 4.0.3/New ZV Drivers - Perfect
+
+Overall Conclusion
+
+QT 4.1.2 has a problem with audio screeching on MacOS 8.6 - horrible bug IMHO
+[Note added 05/15/00 - I was right no this one :) ]
+
+IREZ Drivers are flaky.  They get flakier as the OS and IREZ version goes up.
+IREZ drivers are profoundly broken (black screen and size problem) in MacOS9

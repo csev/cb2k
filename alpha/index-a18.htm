@@ -1,0 +1,40 @@
+<title>Alpha Test</title>
+<h1>Alpha Version 18</h1>
+Mon Aug 14 15:02:31 EDT 2000
+<p>
+It has been a while since the last release. This release works on a 
+synchronization problem where the clicks and the audio tend to drift apart.
+<p>
+Also, a few hacks that I added and have been playing with are in this release.
+If you experience problems compare A17 and A18.  Some bugs may have crept 
+into the code.
+<p>
+<b>Bad Bug Alert:</b>Somehow, At the moment of the start of the recording of a
+lecture Quicktime nearly grabs all of the available 
+disk (take a look at the free disk
+on your main hard disk) - this causes some data to be unsavable to disk.  
+This happens most often when a long sequence of screen grabs is done, but can also happen after a lot of scribbling.  I am working on a fix but until then, 
+it would be best to exit and restart ClipBoard each time you record a lecture.
+<ul>
+<li>
+Changed the internal time tracking from a relative scheme to an 
+absolute scheme.  This should fix some of the problems with time slipping
+as something is used a lot such as pointers, etc.
+<li>
+Added a simple AppleScripting capability.  This was part of my secret plan
+to make CLipBoard publishing available as an off-line process.  Here is a simple example:
+<pre>
+
+set dirname to choose folder with prompt "Hello World"
+tell application "ClipBoard"
+  open dirname
+  save
+end tell
+</pre>
+<p>
+A couple of caveats - This is not the interface I hope to use.  Adding simple Appllescript to application is very painful so I had to hack in some code from a sample and was stuck with the UI.  Someday I will do a good job.
+<p>
+The other problem is that CLipBoard in its publish process cannot seem to let go of the CPU ever so nothing else runs.  Believe me, I tried to let go of the CPU, but most of the work is deep in QuickTime calls which I could not make multithreaded.
+<li>
+Auto-Document-Grab - When enabled, this will cause the "Grab" button to be pushed after 30 seconds if the user has not pressed the grab button.  It is a feature to play with.  The UI could be improved a bit so you could turn it on and off during lecture record, rather than only once.
+</ul>

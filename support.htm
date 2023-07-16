@@ -1,0 +1,71 @@
+<BODY BGCOLOR=white>
+<a href=http://www-personal.umich.edu/~csev/>
+<img src=/~csev/csev.jpg align=right border=0>
+</a>
+<h2>Technical Support as of
+Thu Feb 24 12:57:37 EST 2000
+</h2>
+With free software which is worked on part-time, there is not a lot of
+technical support.  However because I believe firmly in this type of media,
+I try to do as much as I can to support early adopters.  If you have a question
+or a problem, make sure to join the ClipBoard-2000 mailing list.  I read the
+list several times daily and usually respond quickly - unless I am travelling
+or in a 48-hour coding marathon holed up in a basement.
+<h2>Hardware to Buy</h2>
+Take a look at the <a href=hardware.htm>hardware</a> specs.
+<h2>Known Issues</h2>
+<b>Document Camera Support</b> - 
+Dual Camera document camera support has finally vielded a little bit in 
+Alpha 17 and later.  The best combination is the IREZ/CapSure for the document
+camera at 640x480 image size and the Dazzle DM-5000 as the instructor-cam.
+The combination needs some testing before it is declared truly reliable.
+I am looking for experience with other combinations of capture 
+hardware/software.
+<p>
+Using only one video
+source, the document camera is very reliable.  This is because when there
+is only one camera, it uses the straightforward/reliable technique for the 
+video capture.  
+Another solution if you have tape is to run the process twice
+or even use two computers.  First record the lecturer 
+using the document camera and audio, taping everything.  Then redigitize the
+media using something like VidCap or HackTV - then replace the rawmedia.mov 
+file - and viola! you have a good quality document camera and good quality 
+audio/video - and no bugs.
+There is a feature called "Sync-Only" which tries to make this easier.
+<p>
+<b>VST FireWire Drives</b> it has been reported that there are problems 
+when your lecture directory is on a VST Firewire drive.  Symptoms include
+bad captures, bad recompression steps, and bad "make lectures".  So far, I am
+suspecting the fact that it is formatted as a PC disk and not a Mac disk.  
+But this needs more testing.  Perhaps Zips formatted as PC would exhibit the
+same behaviour.
+<p>
+<b>IREZ USB Camera</b> - This camera seems to have problems with 
+general capture to disk using the Quicktime Sequence Grabber.  
+The symptom is that at the end of the lecture I get an error code indicating
+"bad duration" and the resulting rawmedia.mov file is large but worthless.
+Smart people have told me not to waste time trying to recover the data.
+Interestingly, it is the same code which works with at least 7-8 other 
+capture hardware setups.  This leads me to believe that it is the Kritter's
+problem.  Also the Apple sample application HackTV fails in the same way.
+</ul>
+<h2>Other Issues</h2>
+<ul>
+<li>
+Once the recording has started you cannot drag the window - The QT code to 
+do this while recording seems to blow up on me.  Drag the window before you
+start recording.
+<li>
+I have not tested with extremely long lectures - 
+it might blow up - I don't know.  Look for hitting ther 2GB limit 
+on uncompressed lectures.
+<li>
+If you change the name or select the wrong directory on the 
+recompression dialog box, Merge Media will not find it.  The problem is that 
+I cannot figure out how to get the settings dialog up without allowing the
+user to change the filename.
+<li>
+Office-98 on the MAC seems to ignore my requests to set the image size 
+during the Save As HTML Wizard - Solution - Do it on a PC and FTP the files :(
+<ul>

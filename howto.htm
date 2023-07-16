@@ -1,0 +1,76 @@
+<BODY BGCOLOR=white>
+<h2>HowTo Run The ClipBoard-2000</h2>
+<pre>
+Before you start make sure that the video stuff is all installed 
+properly.  I use a QuickCam Pro through USB and it is OK.
+
+Save your PowerPoint to HTML - This can use any size and can be 
+either JPG or GIF.  I have used Office-98 on the Mac, Office-97
+on the PC, and Office-2000 on the PC successfully.  All 
+that matters is the files look like img001.gif, img001.GIF, img001.JPG,
+or img001.jpg.    If you have PowerPoint on the PC, then you need 
+to transfer the files one way or another.  I have even used VirtualPC 
+on the Mac running Office-97 successfully.  The ONLY files that matter
+(so far) are the img*.* files.
+
+Run ClipBoard
+  Close the infernal splash screen
+  If you don't have video, use Lecture | Audio Only to remove the video
+  Use Lecture | Select Directory and navigate to the directory which 
+    contains the PowerPoint output - there is a 4 slide presentation
+    in the ClipBoard-2000 directory
+  Use Lecture | Record Lecture to bring up the video and audio boxes
+  You are not yet recording
+  In the video box, you can select which camera, adjust settings for the camera
+    and adjust the compression.
+  Mostly you can use the defaults - but under Compression, you might play
+    with the settings.  I default the settings to a reasonable JPEG 
+    compression at 8 frames a second.  It is a good compromise compression
+    ending up with about 35KB/sec.   You will have to recompress this 
+    before web delivery using Lecture | Recompress.
+  For Audio settings - Make sure you select the proper microphone/source
+    and then adjust the level until the meter indicates that the audio 
+    is good enough.
+  Once you hit OK in audio, you will see youself being previewed.  Press
+    the record to start recording the lecture. 
+
+Recording a lecture.
+  To advance a slide use the + button or click on the little 
+    thumbnail view of the next slide.
+  If you have to sneeze, press the "Pause" button - then when you want
+    to continue press "Continue"
+  You have three tools (pencil, pointer, and text).  As you select each
+    the cursor changes - you can also select the color for the text and
+    scribble.   These work just about how you would expect.
+  You can also make a clean sheet of paper by pressing the Clear 
+     button.
+  When you are done - press quit.
+
+After the lecture is recorded (filename media) you may want to recompress
+the lecture material using the Sorensen Codec at a low bit rate.  This copies
+the data into a file called media.mov (all in the PowerPoint output
+directory).  When the software brings up the dialog box make sure that you are
+in the right directory and that the file is named media.mov - expect that
+this might take several minutes - progress bars come up during some of the
+steps.
+
+It is important to note that recompression is OPTIONAL.  It is only necessary
+if you will be putting the lecture up on the web.  For quickie demos off
+the hard disk skip the recompression step.
+
+To create the lecture use the Lecture | Make Lecture command.  This also may 
+take several minutes to complete putting up a few progress bars. 
+
+To test the lecture use File | Open to find the file lecture.mov in the
+PowerPoint output directory.  Just press play.
+
+You might also try opening the file in the QuickTime 4 player - take a look 
+at Movie | Get Info to see how the tracks work.  You might also play with
+Edit | Enable tracks to see how everything can be turned on and off.
+
+************
+*  Note    *
+************
+
+Remember - this is an Alpha test.
+</pre>

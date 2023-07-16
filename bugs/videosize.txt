@@ -1,0 +1,89 @@
+void CRSGetVideoSize(Movie theMovie,int *width,int *height)
+{
+	Track sourceTrack;
+	Fixed	mySrcTrackWidth, mySrcTrackHeight;
+	Rect    boxRect;
+	RgnHandle		myRegion = NULL;
+	MatrixRecord myMatrix;
+	char tmp[128];
+	Long tmplong;
+	
+	*width = 0;
+	*height = 0;
+	
+	if ( theMovie == NULL ) return;
+
+	// Try to get the shape from the movie
+
+	//  Some situations (Kritter/SV) the media gets recorded at some strange resolution
+	// (640/240) - but needs to be displayed at 160/120 
+	
+	GetMovieBox(theMovie, &boxRect);
+	CRSMsgNum("GetMovieBox width=",boxRect.right);
+	*width = boxRect.right;
+	*height = boxRect.bottom;
+	
+	myRegion = GetMovieDisplayBoundsRgn (theMovie);
+	*width = (**myRegion).rgnBBox.right;
+	*height = (**myRegion).rgnBBox.bottom;
+	CRSMsgNum("GetMovieDisplayBoundsRegion",*width);
+
+	myRegion = GetMovieBoundsRgn (theMovie);
+	*width = (**myRegion).rgnBBox.right;
+	*height = (**myRegion).rgnBBox.bottom;
+	CRSMsgNum("GetMovieBoundsRegion",*width);
+	
+	myRegion = GetMovieDisplayClipRgn (theMovie);
+	*width = (**myRegion).rgnBBox.right;
+	*height = (**myRegion).rgnBBox.bottom;
+	CRSMsgNum(" GetMovieDisplayClipRgn",*width);
+	
+	myRegion = GetMovieClipRgn (theMovie);
+	*width = (**myRegion).rgnBBox.right;
+	*height = (**myRegion).rgnBBox.bottom;
+	CRSMsgNum(" GetMovieClipRgn",*width);
+	
+	// Look through the tracks
+
+    sourceTrack = GetMovieIndTrackType(theMovie, 1,VideoMediaType, movieTrackMediaType);
+	if (sourceTrack == NULL) return;
+	
+	GetTrackDimensions(sourceTrack, &mySrcTrackWidth, &mySrcTrackHeight);
+	
+	*width = Fix2Long(mySrcTrackWidth);
+	*height = Fix2Long(mySrcTrackHeight);
+	CRSMsgNum("GetTrackDimensions",*width);
+	
+	myRegion =  GetTrackMovieBoundsRgn (sourceTrack);
+	*width = (**myRegion).rgnBBox.right;
+	*height = (**myRegion).rgnBBox.bottom;
+	CRSMsgNum("GetTrackMovieBoundsRgn",*width);
+	
+	myRegion =  GetTrackBoundsRgn (sourceTrack);
+	*width = (**myRegion).rgnBBox.right;
+	*height = (**myRegion).rgnBBox.bottom;
+	CRSMsgNum("GetTrackBoundsRgn",*width);
+		
+	myRegion = GetTrackDisplayBoundsRgn (sourceTrack);
+	*width = (**myRegion).rgnBBox.right;
+	*height = (**myRegion).rgnBBox.bottom;
+	CRSMsgNum("GetTrackDisplayBoundsRgn",*width);
+	
+	myRegion =  GetTrackClipRgn (sourceTrack);
+	*width = (**myRegion).rgnBBox.right;
+	*height = (**myRegion).rgnBBox.bottom;
+	CRSMsgNum("GetTrackClipRgn",*width);
+	
+	//  Is it in the matrix???
+
+	GetTrackDisplayMatrix(sourceTrack,&myMatrix);
+	GetMovieBox(theMovie, &boxRect);
+	CRSMsgNum("Pre-Transform width=",boxRect.right);
+	TransformRect (&myMatrix, &boxRect, nil);
+	CRSMsgNum("post-Transform width=",boxRect.right);
+	*width = boxRect.right;
+	*height = boxRect.bottom;
+	
+	CRSMsgNum("width",*width);
+	CRSMsgNum("height",*height);
+}

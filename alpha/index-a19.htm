@@ -1,0 +1,25 @@
+<title>Alpha Test</title>
+<h1>Alpha Version 19</h1>
+Thu Aug 17 22:30:51 EDT 2000
+<p>
+I would not call this particular bug "fixed" - just stunned.
+<p>
+At the moment of the start of the recording of a
+lecture Quicktime nearly grabs all of the available 
+disk (take a look at the free disk on your main hard disk).
+I seem not to be able to control Quicktime's behavior
+in this respect.
+<p>
+So, the workaround is to allocate 60MB of space the instant before recording
+starts and then release it just as recording starts.  MacOS has a nifty feature where you reserve the space without actually writing it so this is nearly instantaneous.   Then the moment recording starts (and Quicktime has done its business), ClipBoard releases the space, and viola' you have at least 60MB free.
+<p>
+Thanks to Giosue for suggesting this.  I had toyed with something like this
+before but his suggestion pushed me over the edge.  Also, Phil wa the one 
+who found the problem in the first place.
+<p>
+I computed the 60MB based on about 180 screen grabs.  The meta data (*.txt) will be hard pressed to get to a megabyte.  Let me know if this works out.
+<p>
+The downside to this is that you should have >60MB free disk 
+before starting recording.  But hey if you are that close to being out of disk,
+you have worse problems than not being able to record more ClipBoard lectures!
+

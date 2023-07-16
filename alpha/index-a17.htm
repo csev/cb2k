@@ -1,0 +1,67 @@
+<title>Alpha Test</title>
+<h1>Alpha Version 17</h1>
+Thu Feb 24 12:16:29 EST 2000
+<p>
+Well, this is a nice release - a few things finally work.  Dual 
+camera (Instructor/Document) 
+support has moved to a level that I would call "worth a try to 
+play with".  It works with several configurations:
+<ul>
+<li>
+Instrcutor camera = Dazzle / Document Camera = CapSure.  I REALLY 
+like this combination because it allows high quality 640x480 captures
+and both inputs are S-Video/Composite inputs so you can hook it up to 
+a real document camera and other video sources, say like in a studio.
+<li>
+Instructor camera = CapSure / Document Camera = Kritter/USB.  I assume
+that the Kriter/SV will be identical to the CapSure.  This config is strange
+because the high-quality capture is the (tiny) instructor while the lower 
+quality Kritter is the document camera.  OK for demos with the Kritter/SV.
+<li>
+Instructor camera = Kritter-USB DocumentCamera = CapSure.
+Unfortunately I am still nervous about the capability of the Kritter/USB
+to reliably record media.  This would be a Really nice 
+home office configuration if not
+for the continuous fear that you won't get your media :(.
+<li>
+The other new feature is the ability to "not record" any media.  This
+feature is (currently) called Sync-Only.  This allows you to do everything 
+about the lecture except digitize the audio and video.  This would be
+useful if you were digitizing the media on another computer or had
+pre-digitized media that you were playing while synchronizing the slides.
+<p>
+Detailed Changes
+<p>
+<ul>
+<li>
+Added the "Sync-Only" (aka gDontRecord) feature - turned out to be really 
+easy.  I did it while sitting in a recliner watching a basketball game between
+the MSU Spartans and Penn State.  MSU had a 15+ point lead so I could focus
+on code writing.  Wireless networking is pretty cool.  I even talked to my 
+family from time to time.
+<li>
+I altered how the defaults for video (frame rate/jpeg compression) are set.  
+Without knowing it, I was messing up the Dazzle driver by doing 
+things in a certain order - I think that it 
+is Dazzle's problem - but what the heck - I can work arond things with the
+best of them.  What I did was a little more complicated but seems to work with
+all the cameras I have tested.
+<li>
+I have spent a lot of time on two features that the production version 
+currently does not use - frame grabbing directly to the video 
+drivers, rather than through the layer Quicktime calls the "Sequence Grabber".
+I got a lot of help from Dave, Michael, and Kevin on the QuickTime-API 
+developers list, but that code still does not work.  The document
+camera images come through a sequence grabber instead from the VDIG.
+Someday, I will get the VDIG stuff working and then I expect that 
+every possible combination of cameras can be used.
+</ul>
+Actually - Alpha 16 was very close to working.  All that really was broken
+was the default thing on the Dazzle.  
+<p>
+my next steps are to actually have a few users try out the document camera
+on some real lectures and get some reliability feedback.
+<p>
+TTFN
+<p>
+/Chuck

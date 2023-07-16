@@ -1,0 +1,34 @@
+<title>Alpha Test</title>
+<h1>Alpha Version 10</h1>
+Thu Jan 13 11:20:04 EST 2000
+<p>
+Alpha 10 
+was written primarily on an airplane on my trip from Michigan to CERN
+in Switzerland.  Most of these features were coded over the Atlantic.  
+Upon arrival I gave a talk at CERN in which the "blank page" feature
+was broken, much to the delight of the CENR audience.  So here I am 
+sitting in Buiding 40 - (having fixed the bug) and putting up Alpha 10.
+<ul>
+<li>Changed the minimum memory size for the application - hopefully this
+will eliminate the (-108) memory errors.
+<li>Added a new, undocumented feature.  This allows you to publish the 
+lecture at a different size than the lecture was recorded at.  For example,
+you might want slides to be 800x600 during lecture capture so they fill
+the whole screen for the viewing audience.  But when you deliver the lecture 
+over the web you might want to make them smaller, say 400x300 to save bandwidth
+or manage smaller screen space better.  To do this, you add a file to 
+the lecture directory called pubsize.gif - the contents of this file are
+unimportant but the size of this file is used to determine the size 
+of the ultimate lecture produced.  It is a temporary hack because I need to 
+come up with a more elegant way to communicate this information.  There are 
+a whole series of "lecture-production" options that I need to add ultimately.
+<li>Fixed a tiny bug introduced in Alpha 9 where it would say 
+"switch(npart) value 1" when you hit a menu item while recording :).
+<li>Changed the error handler to tell you that -108 is running out of memory.
+<li>Went through the capture loop and made everything non-fatal.  If something
+goes wrong, at least it will end the loop, dump out data as much as possible and then terminate - rather than just quitting mid-loop.
+<li>
+</ul>
+TTFN
+<p>
+/Chuck

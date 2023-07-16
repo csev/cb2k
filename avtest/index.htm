@@ -1,0 +1,141 @@
+<head>
+<title>Testing Audio Compression</title>
+</head>
+<body bgcolor=white>
+<h1>What Audio Compression to Use?</h1>
+<p>
+If you are interested, I have also provided a similar
+<a href=indexvid.htm>Video Compression</a> (7MB) page.  
+You will need some patience if you have a modem, 
+it is over 7MB in size and takes over a minute to load
+on my 10Mb/sec connection at work.  Once it loads, you can play with each 
+of the movies to make A/B comparisons.
+<p>
+This page attempts to help determine what audio compression should 
+be used for both the archival media and for the web streaming media.
+To produce this material a short piece was digitized using no compression and then recompressed (off-line) into each of the formats.
+<p>
+For the archival quality, the key is to use the lowest disk space which keeps quality very high.  For web delivery, you can sacrifice
+quality somewhat to save on the bandwidth.
+<p>
+In my (ad hoc) testing, while video is nice to have and helps form and maintain a bond, audio quality is very important.  Bad audio can
+cause a student to become fatigued.  So, a good rule of thumb is to allocate at least 50-60% of the anticiapted bandwidth to audio.
+<p>
+From this testing, use either <b>Uncompressed</b> or <b>IMA 4:1</b> as your archival format.  For web streaming at 56Kb or lower, 
+the <b>PureVoice 19:1</b> seems like the logical choice.  For web streaming above 128Kb, <b>PureVoice 9:1</b> gives good quality at a pretty low bit rate.  Remember that to convert from Kb/sec (modem speeds) to KB/sec (storage amounts) you must divide by 8.  Since each byte (B) contains 8 bits (b).
+<p>
+If in your testing, you have any comments on this page, please send them to me at csev@umich.edu.
+<p>
+The best way to use this table is to let all of the clips download into cache and then go up and down pressing the
+play/pause buttons.
+<CENTER>
+<TABLE BORDER=2>
+<TR>
+<TD>
+Compression
+<TD>
+Press to Test
+<TD>
+KB/sec
+<TD>
+Quality <br>1=bad 5=good
+</TR>
+<TR>
+<TD>
+Uncompresssed
+<TD>
+<embed src=a-uncompressed.mov autostart=false height=30 width=120></embed>
+<TD>
+21.5
+<TD>
+5 
+</TR>
+<TR>
+<TD>
+Alaw 2:1
+<TD>
+<embed src=a-alaw21.mov autostart=false height=30 width=120></embed>
+<TD>
+21.5
+<TD>
+5 
+</TR>
+<TR>
+<TR>
+<TD>
+Ulaw 2:1
+<TD>
+<embed src=a-ulaw21.mov autostart=false height=30 width=120></embed>
+<TD>
+21.5
+<TD>
+5
+</TR>
+<TR>
+<TD>
+IMA 4:1
+<TD>
+<embed src=a-ima41.mov autostart=false height=30 width=120></embed>
+<TD>
+11.5
+<TD>
+5 
+</TR>
+<TR>
+<TD>
+MACE 3:1
+<TD>
+<embed src=a-mace31.mov autostart=false height=30 width=120></embed>
+<TD>
+7.1
+<TD>
+4.5 
+</TR>
+<TR>
+<TD>
+PureVoice 9:1
+<TD>
+<embed src=a-purevoice91.mov autostart=false height=30 width=120></embed>
+<TD>
+4.7
+<TD>
+4
+</TR>
+<TR>
+<TD>
+MACE 6:1
+<TD>
+<embed src=a-mace61.mov autostart=false height=30 width=120></embed>
+<TD>
+3.5
+<TD>
+3 
+</TR>
+<TR>
+<TD>
+PureVoice 19:1
+<TD>
+<embed src=a-purevoice191.mov autostart=false height=30 width=120></embed>
+<TD>
+2.2
+<TD>
+3
+</TR>
+<TR>
+<TD>
+QDesign Music
+<TD>
+<embed src=a-qdesignmusic.mov autostart=false height=30 width=120></embed>
+<TD>
+2.8
+<TD>
+1
+</TR>
+</TABLE>
+</CENTER>
+<p>
+<address>
+Charles Severance 10/99
+</address>
+
+

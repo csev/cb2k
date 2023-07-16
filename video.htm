@@ -1,0 +1,97 @@
+<BODY BGCOLOR=white>
+<h1>Video Production Notes</h1>
+This page is a place to collect notes on how to produce good video
+while live encoding.  The problem is that some Codecs (esp MPEG) take
+a lot of CPU to encode and may not keep up real-time.
+<p>
+As such, it is better to live encode using PJPEG or MJPEG and then 
+recompress later to MPEG off-line.
+<p>
+General:
+<ul>
+<li>Use a good-quality camera such as a Krittercam from www.irez.com
+<li>Have an unchanging background which is complementary to your skin 
+and clothing.  Black, brown, tan, or dark blue are good.  A bright white 
+background is bad.
+<li>Lighting makes a big difference.  Light from more than one source is good.
+You would be surprised at how nice you look with a small light above and behind
+you pointed at the back of your head (it is called "back-light").
+</ul>
+<h2>Recording</h2>
+During the recording session, you will need to select the video compression
+to be used during the video capture process.  Once you press the record button,
+Quicktime pops up a dialog box.  What you choose here depends on 
+what camera you have and whether or not
+you have Sorenson Video Pro ($500).  
+<p>
+Without Sorenson Video Pro, you cannot really do effective compression
+in Real-Time.   The following table shows the selections that I have used 
+for the cameras I have tested:
+<pre>
+
+Camera                 Setting         Bit Rate    Notes
+------                 -------         --------    -----
+QuickCam Pro 30fps     Video            260KB/sec  Video is a bit fuzzy
+QuickCam Pro 8fps      Video            60KB/sec   
+Kritter 30fps          Component Vid    1MB/sec    Video is VERY nice
+Kritter 8fps           Component Vid    300KB/sec
+</pre>
+The QuickCam uses USB for its connection so it actually compresses the 
+images right in the camera, hence its lower quality and lower bit rate
+video.
+<p>
+With Sorenson Pro, you have several other options (Click on options).  The
+key values you can adjust are "QuickCompress" and the "Frame Rate".  The 
+following table shows the results with a Kritter:
+<pre>
+Compression  Frame Rate   Bit Rate   Notes
+-----------  ----------   --------   -----
+Normal           8        21KB/sec   Drawing OK, of CPU, video OK
+Quick            8        25KB/sec   Drawing OK, some blockiness
+Normal          30        23KB/sec   Drawing slow, video OK     
+Quick           30        38KB/sec   Drawing slightly slow, video OK
+</pre>
+Because it is doing MPEG-1 encoding in real time, it needs a bit of 
+CPU.  Sometimes encoding uses too much CPU, when you are drawing it 
+becomes slow and jerkey.
+<p>
+In all my testing, trying to get Sorensen live capture while compressing
+down to a modem delivery rate such as 3KB/sec, the video quality 
+was completely unacceptible.  
+<p>
+If you don't plan to draw, then use Normal/30fps - if you plan to draw,
+use Quick/8fps.  One other choice is to use something faster than a 
+PowerBook G3/333Mhz.  Maybe later I will do some testing on 400Mhz
+or even G4 systems.
+<p>
+The advantage of using Sorensen Pro is the reduction of data of a factor of 
+40 without much sacrifice in quality.  However, even 25KB/sec is too much 
+for modem delivery so recompression is necessary.
+<h2>Recompression</h2>
+The initial video/audio data is recorded into a file called 
+<b>media</b> - whether you compress this or not, it is the "original"
+media.  The recompression process takes this file and runs it through an 
+off-line compressor (typically MPEG) to produce the file which runs at about
+3KBps.  If you are using uncompressed, this will be going from 
+1MB/sec -> 3KB/sec.
+With Sorenson Pro, it will be going from 25KB/sec -> 3KB/sec.
+<p>
+Because this compression is not done in real time, you don't need the fastest
+procesor or Sorenson Pro - but you do need some patience :).  It has to do 
+a lot of computation on every single frame of the video.
+<p>
+The compressed video ends up being temporarily stored in the file
+<b>media.mov</b>.  The image, draw and other tracks are then added to 
+this file.  Later, this file is "flattened" for web delivery into 
+the file <b>lecture.mov</b>.
+<h3>Recommendations</h4>
+Until I do some better testing, you have one of two possibilities which
+give reasonable performance, storage space, and video quality.
+<ul>
+<li>Use Kritter/Sorensen Pro with 8fps and disable quick compression
+<li>Use Quicktime with 8fps 
+</ul>
+For web delivery, recompression is needed in all cases.
+The next thing I will try is the Kritter/Sorenson Pro on a 400Mhz 
+system at 30fps without Quick Compression.  If that works (does not 
+run out of CPU) it will give excellent quality with minimal disk space.

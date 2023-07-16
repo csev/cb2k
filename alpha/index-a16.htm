@@ -1,0 +1,46 @@
+<title>Alpha Test</title>
+<h1>Alpha Version 16</h1>
+Tue Feb 22 22:19:44 EST 2000
+<p>
+There were two A16's  10:16AM and 10:19PM 
+<p>
+10:19PM Version
+<ul>
+<li>
+Lots more testing/coding - I spent hours testing every combination of
+frame capture technique, driver, screen size, and algorithm.  I finally 
+found a hacked up combination that will support two video sources (reasonably)
+well - You can use an IREZ CapSure and and IREZ Kritter/USB together.  
+I used the Dazzle and it craps out in all cases when paired with another 
+camera.
+<li>
+Unfortunately, I have not found a solution will provides two "video-in"
+digitizers so you could use it in a classroom with two cameras.
+<li>
+Also, unfortunately because the IREZ Kritter/USB seems to make bad .mov files,
+the only real configuration which I have not yet seen a problem is to use the
+CapSure (or Irez KritterPCMCIA) as the "instructor-cam" and the Kritter/USB
+as the "document-cam".  Ah well.  That is enough for one day.
+</ul>
+10:16AM Version
+<ul>
+<li>
+Changed the JPEG quality from good to high during make lecture
+<li>
+Spent HOURS working on making the dual-camera stuff work.  Learned a lot
+but am stil missing something.  I made things a little cleaner.
+</ul>
+Using two cameras is VERY problematic.  Different drivers behave differently
+in different combination.  Even screen size seems to make a difference.
+Audio-only with a document camera uses Quicktime provided high-level routines
+to do the heavy lifting so it works swell.  Because those routines (SG*) don't 
+like two sequence grabbers going and can't handle two video sources in one 
+grabber, to support two video sources, I must work at a lower level creating 
+hundreds of lines of code where there formerly was 10 or so.
+<p>
+I stil believe that it can be made to work - I just have not found the 
+magic bullet.
+<p>
+TTFN
+<p>
+/Chuck

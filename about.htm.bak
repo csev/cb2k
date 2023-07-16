@@ -1,0 +1,60 @@
+<title>About the ClipBoard-2000</title>
+<BODY BGCOLOR=White>
+<a href=http://www-personal.umich.edu/~csev/>
+<img src="http://www-personal.umich.edu/~csev/csev.jpg" border=0 align=right>
+</a>
+<h1>About the ClipBoard-2000</h1>
+This product was initially developed by 
+<a href=http://www-personal.umich.edu/~csev/ target=_new>
+Dr. Charles Severance
+</a> during the Summer and Fall of 1999 at the University of Michigan
+<a href=http://www.ummu.umich.edu/ target=_new>
+Media Union</a>.
+<p>
+The Media Union has advanced learning technology as part of its core mission
+to the University of Michigan. ClipBoard is one of the Media Union's
+Advanced Technology Group's exploratory projects in this area.  
+<p>
+Hopefully, by the Spring of 2000, the product will be used in a number
+of courses on-campus.  Early adopters include the College of Engineering and
+the School of Public Health.  During this pilot test, users outside of the
+University of Michigan will be allowed to download and use ClipBoard as long
+as they understand that it is only a Alpha (or Beta) test of the product.
+The goal of Spring 2000 is to understand the real requirements for such a tool
+so that a more broadly useful tool can be deployed during the Summer of 2000.
+<p>
+Long term goals include the ability to easily move lecture-style content into
+object oriented lecture repositories such as the IBM Digital Library and the 
+Apple Learnting Interchange.
+<p>
+<br clear=all>
+<a href=sample.mov target="_new"><img src=cb2k.gif align=right border=0></a>
+<h2>Using ClipBoard-2000</h2>
+ClipBoard is intended to be used in a wide variety of environments ranging from K-12 through higher-ed and corporate environments.  As such it is designed
+to be intuitive and easy to use.  ClipBoard preoduces web-based lectures
+using Quicktime technology from Apple Computer, Inc.
+<p>
+ClipBoard supports (at least) two basic modes of usage:
+<ul>
+<li><b>Lecture Replacement</b> - A lecture (often with video) is recorded
+using ClipBoard with no audience present and viewed by students 
+instead of attending the lecture.  This is the "distance education" 
+scenario.  This is also useful when one wants to create a lecture archive in 
+a particular topic such as the CERN Web Lecture Archive.
+<li><b>Lecture Recording</b> - In this mode, ClipBoard is used to record 
+(typically only the audio) a lecture while it is being given live.  This
+lecture is then uploaded for the students to review and replay as part
+of an entire learning process.  
+</ul>
+<p>
+The web site for the ClipBoard-2000 is
+<a href=http://www-personal.umich.edu/~csev/projects/cb2k/>
+http://www-personal.umich.edu/~csev/projects/cb2k/
+</a>
+<p>
+Feel free to address any questions regarding ClipBoard-2000 to 
+csev@umich.edu.
+<br clear=all>
+<a href=http://www.apple.com/quicktime/download/ target="_new">
+<img src=quicktime3download.gif border=0 align=right></a>
+/Chuck
